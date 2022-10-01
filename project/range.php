@@ -16,13 +16,14 @@ foreach (range(0, 250, 20) as $number) {
 }
 echo "\n";
 
-// 
+// 4
 foreach (range('a', 'g') as $letter) {
     echo "$letter ";
 }
 
 echo "\n";
 
+// 4
 foreach (range('h', 'f') as $letter) {
     echo "$letter ";
 }
