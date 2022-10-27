@@ -1,0 +1,31 @@
+html,body{
+    background-color: rgb(207, 178, 178);
+}
+
+h1{
+    text-align: center;
+    color: #fff;
+    text-shadow: 1px 1px 1px #000;
+}
+
+table, th, td {
+    border:1px solid black;
+}
+table {
+    width: 100%;
+}
+
+th, td {
+    text-align: center;
+    height: 40px;
+    font-size: 23px;
+}
+
+th {
+    background-color: #000;
+    color: #fff;
+}
+
+td {
+    background-color: rgb(241, 241, 241);
+}
