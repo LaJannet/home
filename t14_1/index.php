@@ -1,3 +1,4 @@
+<?php ob_start(); ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,11 +12,17 @@
     $n = (rand (1, 8)); //Задумане число
     $count = 0; // Кількість спроб
     $text = ""; // Текст підсказки
+    $sign = "|";
     $nameErr = ""; // Повідомлення про помилку
 
     if (isset($_POST['Submit'])) { // Якщо натиснута кнопка 'Submit'
         $count = $_POST['hidden'] + 1;// Збільшуємо лічильник на 1
         $n = $_POST['number'];
+        echo "Спроба $count\n";
+
+        for ($i=0; $i < $count; $i++) { 
+          echo $sign;
+        }
       
         if (empty($_POST["my_number"])) { // Якщо нічого не ввели
           $nameErr = "Число обов'язкове для введення!";
@@ -28,7 +35,6 @@
           }
         }
         if ($nameErr === "") { // Якщо не було помилки
-            $text = $count."|";
           if ($my_number > $n)
             $text .= "Занадто багато!";
           elseif ($my_number < $n) {
@@ -46,6 +52,7 @@
         $nameErr = "";
         header("Location:".$_SERVER['PHP_SELF']); // Перечитуємо ту ж саму сторінку
         exit; // Выход
+        ob_end_flush();
       }
     ?>
 <p>Вгадай число от 1 до 8:</p>
